@@ -11,7 +11,6 @@ const HomeComponent = () => {
 	useMemo(() => {
 		getCurrentUser(setCurrentUser);
 	}, []);
-	console.log(currentUser);
 
 	const logout = async () => {
 		try {
@@ -24,9 +23,10 @@ const HomeComponent = () => {
 
 	return (
 		<div>
-			<div>HomeComponent</div>
-			<h1>{currentUser?.email}</h1>
-			<div>{currentUser?.name}</div>
+			<h1>Developement in Progress..</h1>
+			<h1>HomeComponent</h1>
+			<h1>{currentUser?.name}</h1>
+			<div>{currentUser?.email}</div>
 			<button onClick={logout} className="login-btn">
 				Log Out
 			</button>

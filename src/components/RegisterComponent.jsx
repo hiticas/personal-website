@@ -27,6 +27,7 @@ export default function RegisterComponent() {
 	return (
 		<div className="login-wrapper">
 			<div className="login-wrapper-inner">
+			    <h1>Developement in Progress..</h1>
 				<h1 className="heading">Make the most of your professional life</h1>
 
 				<div className="auth-inputs">
