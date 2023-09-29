@@ -36,14 +36,14 @@ const LoginComponent = () => {
 	};
 	return (
 		<div>
-			<h1>Developement in Progress..</h1>
+			<h1 className="bg-blue-500 text-white p-4">Developement in Progress..</h1>
 			<h1>LoginComponent</h1>
 			<input
 				onChange={(event) =>
 					setCredentials({ ...credentails, email: event.target.value })
 				}
 				type="email"
-				className="common-input"
+				className="border-2 mr-4 common-input"
 				placeholder="Email or Phone"
 			/>
 			<input
@@ -51,11 +51,11 @@ const LoginComponent = () => {
 					setCredentials({ ...credentails, password: event.target.value })
 				}
 				type="password"
-				className="common-input"
+				className="border-2 mr-4 common-input"
 				placeholder="Password"
 			/>
-			<button onClick={login}>Log in</button>
-			<button onClick={() => navigate("/register")}>Sign In</button>
+			<button className="bg-blue-500 text-white p-4 mr-4" onClick={login}>Log in</button>
+			<button className="bg-blue-500 text-white p-4" onClick={() => navigate("/register")}>Sign In</button>
 			<GoogleButton onClick={googleSignIn}>Log in wit Google</GoogleButton>
 		</div>
 	)

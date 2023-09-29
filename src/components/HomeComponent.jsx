@@ -23,11 +23,11 @@ const HomeComponent = () => {
 
 	return (
 		<div>
-			<h1>Developement in Progress..</h1>
+			<h1 className="bg-blue-500 text-white p-4">Developement in Progress..</h1>
 			<h1>HomeComponent</h1>
-			<h1>{currentUser?.name}</h1>
+			<h1 className="font-bold">{currentUser?.name}</h1>
 			<div>{currentUser?.email}</div>
-			<button onClick={logout} className="login-btn">
+			<button className="bg-blue-500 text-white p-4 mr-4 login-btn" onClick={logout}>
 				Log Out
 			</button>
 		</div>

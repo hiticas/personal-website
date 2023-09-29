@@ -27,7 +27,7 @@ export default function RegisterComponent() {
 	return (
 		<div className="login-wrapper">
 			<div className="login-wrapper-inner">
-			    <h1>Developement in Progress..</h1>
+			    <h1 className="bg-blue-500 text-white p-4">Developement in Progress..</h1>
 				<h1 className="heading">Make the most of your professional life</h1>
 
 				<div className="auth-inputs">
@@ -36,7 +36,7 @@ export default function RegisterComponent() {
 						setCredentials({ ...credentails, name: event.target.value })
 					}
 					type="text"
-					className="common-input"
+					className="border-2 mr-4 common-input"
 					placeholder="Your Name"
 				/>
 				<input
@@ -44,7 +44,7 @@ export default function RegisterComponent() {
 						setCredentials({ ...credentails, email: event.target.value })
 					}
 					type="email"
-					className="common-input"
+					className="border-2 mr-4 common-input"
 					placeholder="Email or phone number"
 				/>
 				<input
@@ -52,19 +52,19 @@ export default function RegisterComponent() {
 						setCredentials({ ...credentails, password: event.target.value })
 					}
 					type="password"
-					className="common-input"
+					className="border-2 mr-4 common-input"
 					placeholder="Password (6 or more characters)"
 				/>
 				</div>
-				<button onClick={register} className="login-btn">
+				<button className="bg-blue-500 text-white p-4 mr-4 login-btn" onClick={register}>
 					Agree & Join
 				</button>
 			</div>
 			<div className="google-btn-container">
 				<p className="go-to-signup">
-					Already on LinkedIn?
+					Already have accout?
 				</p>
-				<button onClick={() => navigate("/")}>
+				<button className="bg-blue-500 text-white p-4 mr-4 login-btn" onClick={() => navigate("/")}>
 					Log in
 				</button>
 			</div>
