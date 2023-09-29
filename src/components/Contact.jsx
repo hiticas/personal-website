@@ -1,27 +1,31 @@
-import React, { useState } from "react";
-import { RegisterAPI } from "../api/AuthAPI";
+import React, { useState, useEffect } from "react";
 import { postUserData } from "../api/FirestoreAPI";
-import { useNavigate } from "react-router-dom";
 import { getUniqueID } from "../helpers/getUniqueId";
+import { useRef } from "react";
 
-export default function RegisterComponent() {
-	let navigate = useNavigate();
+const Contact = ({ scrollToContact }) => {
+	const contactSectionRef = useRef(null);
+
+	useEffect(() => {
+		if (scrollToContact && contactSectionRef.current) {
+			contactSectionRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	}, [scrollToContact]);
+
 	const [credentails, setCredentials] = useState({
 		name: "",
 		email: "",
 		message: "",
 	});
-	const register = async () => {
+	
+	const sendMessage = async () => {
 		try {
-			// let res = await RegisterAPI(credentails.email, credentails.password);
 			postUserData({
 				userID: getUniqueID(),
 				name: credentails.name,
 				email: credentails.email,
 				message: credentails.message,
 			});
-			localStorage.setItem("userEmail", credentails.email);
-			// navigate("/home");
 			setCredentials({
 				name: '',
 				email: '',
@@ -31,13 +35,11 @@ export default function RegisterComponent() {
 			console.log(err);
 		}
 	};
-
 	return (
-		<div className="login-wrapper">
+		<div className="login-wrappe h-screen" ref={contactSectionRef}>
 			<div className="login-wrapper-inner">
-				<h1 className="bg-blue-500 text-white p-4">Developement in Progress..</h1>
-				<h1 className="heading">Make the most of your professional life</h1>
-
+				<hr />
+				<h1 className="heading">Contact me. Make the most of your professional life.</h1>
 				<div className="auth-inputs flex">
 					<input
 						onChange={(event) =>
@@ -67,11 +69,13 @@ export default function RegisterComponent() {
 						placeholder="Write message"
 					/>
 				</div>
-				<hr />
-				<button className="bg-blue-500 text-white p-4 mr-4 login-btn" onClick={register}>
+				<button className="bg-blue-500 text-white p-4 mr-4 login-btn" onClick={sendMessage}>
 					Send message
 				</button>
+				<hr />
 			</div>
 		</div>
-	);
+	)
 }
+
+export default Contact
