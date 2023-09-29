@@ -5,7 +5,7 @@ import {
 	onSnapshot,
   } from "firebase/firestore";
 
-let userRef = collection(firestore, "users");
+let userRef = collection(firestore, "messages");
 
 export const postUserData = async (object) => {
 	try {
