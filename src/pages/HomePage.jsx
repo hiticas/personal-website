@@ -29,14 +29,17 @@ const Home = () => {
 	}, []); 
 	
 	return (
-		<>
-			<Header />
-			<HelloBanner scrollHandler={handleScrollToContact}/>
-			<Skills />
-			<Projects scrollHandler={handleScrollToContact}/>
-			<Contact scrollToContact={scrollToContact}/>
-			<Footer />
-		</>
+        <>
+			<div className="h-10 bg-blue-300 p-2 font-ubuntu">Development in Progress..</div>
+            <div className="homepage font-ubuntu">
+                <Header />
+                <HelloBanner scrollHandler={handleScrollToContact}/>
+                <Skills />
+                <Projects scrollHandler={handleScrollToContact}/>
+                <Contact scrollToContact={scrollToContact}/>
+                <Footer />
+            </div>
+        </>
 	)
 }
 

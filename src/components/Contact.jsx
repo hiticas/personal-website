@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { postUserData } from "../api/FirestoreAPI";
 import { getUniqueID } from "../helpers/getUniqueId";
+import circles_grey from '../assets/images/circles-grey.jpg';
 import { useRef } from "react";
 
 const Contact = ({ scrollToContact }) => {
@@ -36,18 +37,21 @@ const Contact = ({ scrollToContact }) => {
 		}
 	};
 	return (
-		<div className="login-wrappe h-screen" ref={contactSectionRef}>
-			<div className="login-wrapper-inner">
-				<hr />
-				<h1 className="heading">Contact me. Make the most of your professional life.</h1>
-				<div className="auth-inputs flex">
+		<div className="contact login-wrappe px-[100px]" ref={contactSectionRef}>
+			<div className="login-wrapper-inner relative border-b flex justify-between py-[100px] h-[500px]">
+				<div className="w-[40%]">
+					<div className="text-white text-7xl mb-[40px]">Contact</div>
+					<div className="text-slate-300 text-lg w-[400px]">I would like to hear about your project and how I can help. Please fill in the form, and I'll get back to you as soon as possible.</div>
+					<img className="absolute bottom-0 ml-[-100px]" src={circles_grey} />
+				</div>
+				<div className="auth-inputs flex flex-col w-[40%]">
 					<input
 						onChange={(event) =>
 							setCredentials({ ...credentails, name: event.target.value })
 						}
 						value={credentails.name}
 						type="text"
-						className="border-2 mr-4 common-input"
+						className="text-white border-b-2 px-[20px] py-[10px] mb-4 bg-transparent"
 						placeholder="Your Name"
 					/>
 					<input
@@ -56,8 +60,8 @@ const Contact = ({ scrollToContact }) => {
 						}
 						value={credentails.email}
 						type="email"
-						className="border-2 mr-4 common-input"
-						placeholder="Email or phone number"
+						className="text-white border-b-2 px-[20px] py-[10px] mb-4 bg-transparent"
+						placeholder="Your Email"
 					/>
 					<textarea
 						onChange={(event) =>
@@ -65,14 +69,13 @@ const Contact = ({ scrollToContact }) => {
 						}
 						value={credentails.message}
 						type="text"
-						className="border-2 mr-4 common-input"
+						className="text-white border-b-2 px-[20px] py-[10px] mb-4 bg-transparent"
 						placeholder="Write message"
 					/>
+					<button className="text-xl text-white border-b-2 border-blue-700 hover:border-blue-400 pb-2 w-[200px] ml-auto mt-[50px]" onClick={sendMessage}>
+						Send message
+					</button>
 				</div>
-				<button className="bg-blue-500 text-white p-4 mr-4 login-btn" onClick={sendMessage}>
-					Send message
-				</button>
-				<hr />
 			</div>
 		</div>
 	)

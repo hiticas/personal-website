@@ -1,0 +1,48 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+	--background-primary-color: rgba(21,21,21,255);
+	--background-secondary-color: rgba(36,36,36,255);
+}
+.test {
+	@apply bg-blue-500 text-white p-4;
+}
+
+.test:hover {
+	@apply hover:bg-blue-700;
+}
+
+.homepage {
+	max-width: 1400px;
+	margin: 0 auto;
+	background-color: var(--background-primary-color);
+}
+
+.contact, .footer {
+	background-color: var(--background-secondary-color);
+}
+
+.skills {
+	background-image: url(../src/assets/images/circles-black.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom 60px;
+}
+
+.icon {
+	font-size: 30px;
+	padding: 10px;
+}
+
+.icon:hover {
+	color: rgb(29 78 216 );
+	cursor: pointer;
+}
+
+input:focus {
+	outline: none;
+}
+textarea:focus {
+	outline: none;
+}
