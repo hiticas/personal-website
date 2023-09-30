@@ -9,7 +9,7 @@ const Projects = ({ scrollHandler }) => {
 	return (
 		<div className='projects px-[100px] mb-[100px]'>
 			<div className="flex justify-between items-center">
-				<div className='text-white text-6xl font-bold'>Projects</div>
+				<div className='text-white text-7xl'>Projects</div>
 				<button onClick={scrollHandler} className="text-xl text-white border-b-2 border-blue-700 hover:border-blue-400 pb-2">CONTACT ME</button>
 			</div>
 			<div className='flex justify-between my-[100px]'>
